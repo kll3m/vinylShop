@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comporter{% endblock %}
+
+{% block body %}
+    <h1>Comporter</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ comporter.id }}</td>
+            </tr>
+            <tr>
+                <th>QteCommandeAlbum</th>
+                <td>{{ comporter.qteCommandeAlbum }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('comporter_index') }}">back to list</a>
+
+    <a href="{{ path('comporter_edit', {'id': comporter.id}) }}">edit</a>
+
+    {{ include('comporter/_delete_form.html.twig') }}
+{% endblock %}

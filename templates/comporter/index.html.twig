@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comporter index{% endblock %}
+
+{% block body %}
+    <h1>Comporter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>QteCommandeAlbum</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comporter in comporters %}
+            <tr>
+                <td>{{ comporter.id }}</td>
+                <td>{{ comporter.qteCommandeAlbum }}</td>
+                <td>
+                    <a href="{{ path('comporter_show', {'id': comporter.id}) }}">show</a>
+                    <a href="{{ path('comporter_edit', {'id': comporter.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('comporter_new') }}">Create new</a>
+{% endblock %}
