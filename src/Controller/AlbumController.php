@@ -33,7 +33,7 @@ class AlbumController extends AbstractController
         $album = new Album();
         $form = $this->createForm(AlbumType::class, $album);
         $form->handleRequest($request);
-
+/** test for cynthia */
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
