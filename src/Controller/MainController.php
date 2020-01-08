@@ -7,13 +7,24 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
     /**
      * @Route("/", name="main")
      */
-    public function index()
+    public function main()
     {
         return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
+
+
         ]);
     }
+    /**
+     * @Route("/home", name="home")
+     */
+    public function home()
+    {
+        return $this->render('main/home.html.twig' );
+    }
+
+
 }

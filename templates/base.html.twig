@@ -3,10 +3,77 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href=" {{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Vinyl Shop</a>
+
+                    <ul class="nav justify-content-end ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/style">Styles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/album">Nouveautés</a>
+                        </li>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fa fa-user"> </i></a>
+                        </li>
+                        <div class="row">
+                            <li class="nav-item">
+                            <a class="nopadding nav-link" href="/style">Se connecter</a>
+                            </li>
+                            <div class="w-100" style="height:0px;"></div>
+                            <li class="nav-item">
+                                <a class="nopadding nav-link" href="/style">S'inscrire</a>
+                            </li>
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fa fa-shopping-bag"> </i><span class="badge badge-primary" style="margin-top:4px;">2</span></a>
+                        </li>
+                    </ul>
+
+            </nav>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        <footer class="page-footer bg-dark">
+            <div class="container">
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="footicon col-md-12">
+
+                        <!-- Facebook -->
+                        <a class="fb-ic">
+                            <i class="fa fa-facebook-f white"> </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic">
+                            <i class="fa fa-twitter"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fa fa-instagram"> </i>
+                        </a>
+
+                </div>
+            </div>
+            </div>
+                <!-- Grid column -->
+                <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                    <a href="https://mdbootstrap.com/education/bootstrap/"> VinylShop.com</a>
+                </div>
+
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
