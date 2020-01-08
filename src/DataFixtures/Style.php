@@ -45,11 +45,11 @@ class Style extends Fixture
         $manager->persist($moyPaiement2);
 
         $etat1 = new EtatCommande();
-        $etat1->setEtatCommande('En cours de traitement');
+        $etat1->setLibelleEtatCommande('En cours de traitement');
         $etat2 = new EtatCommande();
-        $etat2->setEtatCommande('Expédiée');
+        $etat2->setLibelleEtatCommande('Expédiée');
         $etat3 = new EtatCommande();
-        $etat3->setEtatCommande('Livrée');
+        $etat3->setLibelleEtatCommande('Livrée');
         $manager->persist($etat1);
         $manager->persist($etat2);
         $manager->persist($etat3);
