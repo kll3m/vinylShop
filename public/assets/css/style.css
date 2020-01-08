@@ -1,0 +1,31 @@
+.nopadding {
+    margin-left: 15px;
+    padding: 0 !important;
+    font-size: 11px;
+    color: #007bff !important;
+
+}
+
+.nopadding:hover{
+    color: slategray;
+}
+
+.nav-item a{
+    color: #e0e0e0;
+}
+
+.nav-item i{
+    color: gray;
+}
+
+.nav-item .fa{
+    font-size: 22px;
+}
+
+.nav-item a:hover{
+    color: #007bff;
+}
+
+.footicon i {
+    color: white;
+}
