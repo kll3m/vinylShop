@@ -81,6 +81,8 @@ class AlbumController extends AbstractController
         ]);
     }
 
+
+
     /**
      * @Route("/{id}/edit", name="album_edit", methods={"GET","POST"})
      */

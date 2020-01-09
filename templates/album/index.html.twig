@@ -3,7 +3,50 @@
 {% block title %}Album index{% endblock %}
 
 {% block body %}
+    {#<div class="filtres" style="background-color: #FAF6F6;height:100px;width:100%;">#}
+        {#<div class="row">#}
+            {#<div class="col-2"></div>#}
+            {#<div class="col-6">#}
+                {#<div class="btn-group">#}
+                    {#<button class="btn btn-light btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                        {#Style#}
+                    {#</button>#}
+                    {#<div class="dropdown-menu">#}
+                        {#...#}
+                    {#</div>#}
+                {#</div>#}
 
+                {#<div class="btn-group">#}
+                    {#<button class="btn btn-light btn-sm" type="button">#}
+                        {#Artiste#}
+                    {#</button>#}
+                    {#<button type="button" class="btn btn-sm btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                        {#<span class="sr-only">Toggle Dropdown</span>#}
+                    {#</button>#}
+                    {#<div class="dropdown-menu">#}
+                        {#...#}
+                    {#</div>#}
+                {#</div>#}
+
+
+                {#<div class="btn-group">#}
+                    {#<button class="btn btn-light btn-sm" type="button">#}
+                        {#Album#}
+                    {#</button>#}
+                    {#<button type="button" class="btn btn-sm btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+                        {#<span class="sr-only">Toggle Dropdown</span>#}
+                    {#</button>#}
+                    {#<div class="dropdown-menu">#}
+                        {#...#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="col-4">#}
+                {#<a href="">Rechercher</a>#}
+            {#</div>#}
+
+        {#</div>#}
+    {#</div>#}
     <table class="table">
         <thead>
             <tr>
@@ -15,22 +58,44 @@
             </tr>
         </thead>
         <tbody>
-        {% for album in albums %}
-            <tr>
-                <td>{{ album.nomAlbum }}</td>
-                <td>{{ album.anneeAlbum }}</td>
-                <td>{{ album.prixAlbum }}</td>
-                <td>{{ album.stockAlbum }}</td>
-                <td>
-                    <a href="{{ path('album_show', {'id': album.id}) }}">Voir</a>
-                    <a href="{{ path('album_edit', {'id': album.id}) }}">Modifier</a>
-                </td>
-            </tr>
+        <div class="container article">
+            <div class="row">
+                {% for album in albums %}
+                <div class="col-6 col-sm-4">
+                    <div class="card" style="width: 14rem;">
+                        <div class="card-body">
+                            <img src="{{ asset('assets/img/album1.jpg') }}" class="card-img-top">
+                            <h5 class="card-title">{{ album.nomAlbum }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{album.prixAlbum}}</h6>
+                        <a data-toggle="modal"
+                           data-target="#dataModal"
+                           href="#" class="card-link">Ajout Panier</a>
+                        <div id="dataModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                    </div>
+                                    <div class="modal-body" id="modal_detail">
+                                        <p>Votre article à bien été ajouté au panier.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         {% else %}
             <tr>
                 <td colspan="6">Aucun résultat</td>
             </tr>
         {% endfor %}
+            </div>
+        </div>
         </tbody>
     </table>
 
