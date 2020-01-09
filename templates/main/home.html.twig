@@ -33,7 +33,7 @@
                 <div class="card" style="width: 14rem;">
                     <div class="card-body">
                         <img src="{{ asset('assets/img/album3.jpg') }}" class="card-img-top">
-                        <h5 class="card-title">Titre Album</h5>
+                        <a href="{{ path('album_show', {'id': album.id}) }}"> <h5 class="card-title">Titre Album</h5></a>
                         <h6 class="card-subtitle mb-2 text-muted">Prix</h6>
                         <p class="card-text">Petite description</p>
                         <a href="#" class="card-link">Ajout Panier</a>
