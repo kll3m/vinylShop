@@ -18,24 +18,26 @@
                             <a class="nav-link" href="/style">Styles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/album">Nouveautés</a>
+                            <a class="nav-link" href="/album/nouveau">Nouveautés</a>
                         </li>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
+                        <form class="form-inline" action="/album/recherche" method="get">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
                             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                         <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-user"> </i></a>
                         </li>
+                        {% if not app.user %}
                         <div class="row">
                             <li class="nav-item">
-                            <a class="nopadding nav-link" href="/style">Se connecter</a>
+                            <a class="nopadding nav-link" href="/login">Se connecter</a>
                             </li>
                             <div class="w-100" style="height:0px;"></div>
                             <li class="nav-item">
-                                <a class="nopadding nav-link" href="/style">S'inscrire</a>
+                                <a class="nopadding nav-link" href="/client/new">S'inscrire</a>
                             </li>
                         </div>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-shopping-bag"> </i><span class="badge badge-primary" style="margin-top:4px;">2</span></a>
                         </li>

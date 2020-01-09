@@ -26,6 +26,28 @@ class AlbumController extends AbstractController
     }
 
     /**
+     * @Route("/nouveau", name="nouveau", methods={"GET"})
+     */
+
+    public function nouveautes(AlbumRepository $albumRepository): Response
+    {
+        return $this->render('album/index.html.twig', [
+            'albums' => $albumRepository->findBy([],['anneeAlbum'=>'ASC'] )
+        ]);
+    }
+
+    /**
+     * @Route("/recherche", name="recherche", methods={"GET"})
+     */
+
+    public function recherche(AlbumRepository $albumRepository, Request $request): Response
+    {
+        return $this->render('album/index.html.twig', [
+            'albums' => $albumRepository->findBy([ 'nomAlbum'=>$request->get('search')],['nomAlbum'=>'ASC'])
+        ]);
+    }
+
+    /**
      * @Route("/new", name="album_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -47,6 +69,7 @@ class AlbumController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 
     /**
      * @Route("/{id}", name="album_show", methods={"GET"})

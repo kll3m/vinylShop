@@ -21,7 +21,7 @@ class StyleController extends AbstractController
     public function index(StyleRepository $styleRepository): Response
     {
         return $this->render('style/index.html.twig', [
-            'styles' => $styleRepository->findAll(),
+            'styles' => $styleRepository->findBy([],['nomStyle'=>'ASC'] )
         ]);
     }
 
