@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Modifier style :</h1>
 
-    {{ include('style/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('style/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('style_index') }}">back to list</a>
+    <a href="{{ path('style_index') }}">Retour à la liste des styles</a>
 
     {{ include('style/_delete_form.html.twig') }}
 {% endblock %}
