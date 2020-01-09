@@ -1,3 +1,52 @@
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+body {
+    font-family: 'Muli', sans-serif !important;
+    min-height: 100vh !important;
+}
+
+
+.navbar-brand {
+    font-family: 'Kulim Park', sans-serif;
+    font-weight: bold;
+    font-size: 28px !important;
+    margin-left: 17px;
+}
+
+.margecontent {
+    margin-top: 50px !important;
+    margin-right: 60px !important;
+    margin-left: 50px !important;
+}
+
+.butons{
+    margin-left:50px !important;
+
+}
+
+.card {
+    margin-left: 10px !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+.card-body img{
+    margin: 0;
+    width:100% !important;
+    height:230px!important;
+}
+footer{
+    bottom: 0 !important;
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
 .nopadding {
     margin-left: 15px;
     padding: 0 !important;
@@ -29,3 +78,4 @@
 .footicon i {
     color: white;
 }
+
