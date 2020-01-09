@@ -4,30 +4,65 @@
 
 {% block body %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>NomAlbum</th>
-                <td>{{ album.nomAlbum }}</td>
-            </tr>
-            <tr>
-                <th>Annee de parution</th>
-                <td>{{ album.anneeAlbum }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ album.prixAlbum }} €</td>
-            </tr>
-            <tr>
-                <th>Stock</th>
-                <td>{{ album.stockAlbum }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="#">Albums</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ album.nomAlbum }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img style="width:350px;" src="{{ asset('assets/img/album2.jpg') }}">
+            </div>
+            <div class="col-4">
+                <h4>{{ album.nomAlbum }}</h4>
+                <p>{{ album.nomAlbum }}</p>
+                <p>Label</p>
+                <p>{{ album.anneeAlbum }}</p>
+                <p>{{ album.artiste.nomArtiste }}</p>
+            </div>
+            <div class="col-4">
+                <div class="jumbotron jumbotron-fluid">
+
+                    <h1 class="display-4"></h1>
+                    <p class="lead">{{ album.prixAlbum }} €</p>
+                    <p class="lead">Quantité</p>
+                    
+                </div>
+            </div>
+        </div>
+{#        <table class="table">#}
+{#            <tbody>#}
+{#                <tr>#}
+{#                    <th>NomAlbum</th>#}
+{#                    <td>{{ album.nomAlbum }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th>Annee de parution</th>#}
+{#                    <td>{{ album.anneeAlbum }}</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th>Prix</th>#}
+{#                    <td>{{ album.prixAlbum }} €</td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <th>Stock</th>#}
+{#                    <td>{{ album.stockAlbum }}</td>#}
+{#                </tr>#}
+{#            </tbody>#}
+{#        </table>#}
 
     <a href="{{ path('album_index') }}">Retour à la liste des albums</a>
 
     <a href="{{ path('album_edit', {'id': album.id}) }}">Modifier l'album</a>
 
     {{ include('album/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

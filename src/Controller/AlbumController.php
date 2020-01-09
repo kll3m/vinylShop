@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Album;
+use App\Entity\Artiste;
 use App\Form\AlbumType;
 use App\Repository\AlbumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
