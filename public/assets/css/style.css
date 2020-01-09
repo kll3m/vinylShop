@@ -9,6 +9,10 @@ body {
     min-height: 100vh !important;
 }
 
+.butons{
+    text-align: right;
+}
+
 
 .navbar-brand {
     font-family: 'Kulim Park', sans-serif;
@@ -21,15 +25,6 @@ body {
     margin-top: 50px !important;
     margin-right: 60px !important;
     margin-left: 50px !important;
-}
-
-.butons{
-    margin-left:50px !important;
-
-}
-
-.card {
-    margin-left: 10px !important;
 }
 
 .card-body{
