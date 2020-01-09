@@ -3,36 +3,31 @@
 {% block title %}Album{% endblock %}
 
 {% block body %}
-    <h1>Album</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ album.id }}</td>
-            </tr>
             <tr>
                 <th>NomAlbum</th>
                 <td>{{ album.nomAlbum }}</td>
             </tr>
             <tr>
-                <th>AnneeAlbum</th>
+                <th>Annee de parution</th>
                 <td>{{ album.anneeAlbum }}</td>
             </tr>
             <tr>
-                <th>PrixAlbum</th>
-                <td>{{ album.prixAlbum }}</td>
+                <th>Prix</th>
+                <td>{{ album.prixAlbum }} €</td>
             </tr>
             <tr>
-                <th>StockAlbum</th>
+                <th>Stock</th>
                 <td>{{ album.stockAlbum }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('album_index') }}">back to list</a>
+    <a href="{{ path('album_index') }}">Retour à la liste des albums</a>
 
-    <a href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
+    <a href="{{ path('album_edit', {'id': album.id}) }}">Modifier l'album</a>
 
     {{ include('album/_delete_form.html.twig') }}
 {% endblock %}

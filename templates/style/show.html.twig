@@ -8,19 +8,15 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ style.id }}</td>
-            </tr>
-            <tr>
-                <th>NomStyle</th>
+                <th>Style</th>
                 <td>{{ style.nomStyle }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('style_index') }}">Retour à la listet</a>
+    <a href="{{ path('style_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('style_edit', {'id': style.id}) }}">Editer</a>
+    <a href="{{ path('style_edit', {'id': style.id}) }}">Modifier le style</a>
 
     {{ include('style/_delete_form.html.twig') }}
 {% endblock %}

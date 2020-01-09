@@ -8,22 +8,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>NomClient</th>
-                <th>PrenomClient</th>
-                <th>TelClient</th>
-                <th>MailClient</th>
-                <th>AdresseClient</th>
-                <th>PseudoClient</th>
-                <th>MdpClient</th>
-                <th>RoleClient</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Tel</th>
+                <th>Mail</th>
+                <th>Adresse</th>
+                <th>Pseudo</th>
+                <th>Mdp</th>
+                <th>Role</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for client in clients %}
             <tr>
-                <td>{{ client.id }}</td>
                 <td>{{ client.nomClient }}</td>
                 <td>{{ client.prenomClient }}</td>
                 <td>{{ client.telClient }}</td>
@@ -33,17 +31,17 @@
                 <td>{{ client.mdpClient }}</td>
                 <td>{{ client.roleClient ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
-                    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">Voir</a>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('client_new') }}">Create new</a>
+    <a href="{{ path('client_new') }}">Enregistrer</a>
 {% endblock %}
