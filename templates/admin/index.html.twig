@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page admin{% endblock %}
+
+{% block body %}
+
+    <!--Partie Gérer-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 35px;">
+            <h4>Gérer</h4>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-2"></div>
+        <div class="col-1 admin">
+            <i class="fa fa-user" style="color: dimgray;font-size: 40px;"> </i>
+        </div>
+        <div class="col-2">
+            <p><a href="">Voir membres</a></p>
+            <p><a href="">Ajouter membre</a></p>
+        </div>
+
+        <div class="col-1 admin">
+            <i class="fa fa-shopping-bag" style="color: dimgray;font-size: 40px;"> </i>
+        </div>
+        <div class="col-2">
+            <p><a href="">Gérer commandes</a></p>
+            <p><a href="">Ajouter commandes</a></p>
+        </div>
+
+        <div class="col-1 admin">
+            <i class="fa fa-tag" style="color: dimgray;font-size: 40px;"> </i>
+        </div>
+        <div class="col-2">
+            <p><a href="">Voir produits</a></p>
+            <p><a href="">Ajouter produits</a></p>
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+</div>
+
+    <!--Partie Commandes-->
+
+<div class="container">
+    <div class="row" style="margin-top: 45px;background-color: #f3f3f3;padding-top: 20px;">
+        <div class="col-2" >
+            <h4>Commandes</h4>
+        </div>
+        <div class="col-10">
+            <a class="btn btn-outline-secondary" href="#" role="button">Voir tout</a>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: #f3f3f3;padding-top: 30px;">
+        <div class="col-3"></div>
+        <div class="col-2">
+            <p>Commandes passées</p>
+        </div>
+        <div class="col-2">
+            <p>Livraison en cours</p>
+        </div>
+        <div class="col-2">
+            <p>Livrées</p>
+        </div>
+        <div class="col-2">
+            <p>Total</p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+    <div class="nombre row" style="background-color: #f3f3f3;padding-top: 30px;">
+        <div class="col-3"></div>
+        <div class="col-2">
+            <h3><span class="badge badge-light">35</span></h3>
+        </div>
+        <div class="col-2">
+            <h3><span class="badge badge-light">35</span> </h3>
+        </div>
+        <div class="col-2">
+            <h3><span class="badge badge-light">35</span></h3>
+        </div>
+        <div class="col-2">
+           <h3> <span class="badge badge-primary">138</span></h3>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+    <!--Partie Membres-->
+
+    <div class="container">
+        <div class="row" style="margin-top: 45px;background-color: #f3f3f3;padding-top: 20px;">
+            <div class="col-2" >
+                <h4>Membres</h4>
+            </div>
+            <div class="col-10">
+                <a class="btn btn-outline-secondary" href="#" role="button">Voir tout</a>
+            </div>
+        </div>
+
+        <div class="row" style="background-color: #f3f3f3;padding-top: 30px;">
+            <div class="col-3"></div>
+            <div class="col-2">
+                <p>Nouveaux inscrits</p>
+            </div>
+            <div class="col-2">
+                <p>Membres avec connexion récente</p>
+            </div>
+            <div class="col-2">
+                <p>Membres non connectés depuis +6 mois</p>
+            </div>
+            <div class="col-2">
+                <p>Total</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+        <div class="nombre row" style="background-color: #f3f3f3;padding-top: 30px; margin-bottom: 150px;">
+            <div class="col-3"></div>
+            <div class="col-2">
+                <h3><span class="badge badge-light">35</span></h3>
+            </div>
+            <div class="col-2">
+                <h3><span class="badge badge-light">25</span> </h3>
+            </div>
+            <div class="col-2">
+                <h3><span class="badge badge-light">35</span></h3>
+            </div>
+            <div class="col-2">
+                <h3> <span class="badge badge-primary">826</span></h3>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+{% endblock %}

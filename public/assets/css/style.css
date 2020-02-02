@@ -79,6 +79,15 @@ footer{
     color: #007bff;
 }
 
+.admintitle{
+    margin-top: 35px;
+    background-color: #f3f3f3;
+}
+
+.nombre .badge{
+    margin-left: 25px;
+}
+
 .footicon i {
     color: white;
 }

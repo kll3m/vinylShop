@@ -42,6 +42,16 @@ class Album
     private $stockAlbum;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imgAlbum;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $creationAlbum;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Artiste", inversedBy="albums")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -98,6 +108,31 @@ class Album
     public function setStockAlbum(int $stockAlbum): self
     {
         $this->stockAlbum = $stockAlbum;
+
+        return $this;
+    }
+
+
+    public function getImgAlbum(): ?string
+    {
+        return $this->imgAlbum;
+    }
+
+    public function setImgAlbum(string $imgAlbum): self
+    {
+        $this->imgAlbum = $imgAlbum;
+
+        return $this;
+    }
+
+    public function getCreationAlbum(): ?string
+    {
+        return $this->creationAlbum;
+    }
+
+    public function setCreationAlbum(string $creationAlbum): self
+    {
+        $this->creationAlbum = $creationAlbum;
 
         return $this;
     }
