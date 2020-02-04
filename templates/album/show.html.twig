@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-4">
-                <img style="width:350px;" src="{{ asset('assets/img/album2.jpg') }}">
+                <img style="width:350px;" src="{{ asset( album.imgAlbum ) }}">
             </div>
             <div class="col-4">
                 <h4>{{ album.nomAlbum }}</h4>
@@ -33,6 +33,7 @@
 
                     <h1 class="display-4"></h1>
                     <p class="lead">{{ album.prixAlbum }} €</p>
+                    <button type="button" class="btn btn-outline-dark">Ajouter au panier</button>
                     <p class="lead">Quantité</p>
 
                 </div>
