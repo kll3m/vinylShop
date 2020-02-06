@@ -7,12 +7,11 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AlbumRepository")
- *  * @Vich\Uploadable()
  */
 class Album
 {
@@ -22,12 +21,6 @@ class Album
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @var File|null
-     * @Vich\UploadableField(mapping="property_image", fileNameProperty="filename")
-     */
-    private $imgFile;
 
 
     /**
@@ -131,18 +124,6 @@ class Album
     public function setImgAlbum(string $imgAlbum): self
     {
         $this->imgAlbum = $imgAlbum;
-
-        return $this;
-    }
-
-    public function getImgFile(): ?File
-    {
-        return $this->imgFile;
-    }
-
-    public function setImgFile(?File $imgFile): Property
-    {
-        $this->imgFile = $imgFile;
 
         return $this;
     }

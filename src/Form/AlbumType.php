@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Album;
 use App\Entity\Artiste;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,6 +19,10 @@ class AlbumType extends AbstractType
             ->add('anneeAlbum')
             ->add('prixAlbum')
             ->add('stockAlbum')
+            ->add('imgAlbum', FileType::class, [
+                'required' => false,
+                'mapped'       => false
+            ])
             ->add('artiste', EntityType::class, [
                 'class' => Artiste::class,
                 'choice_label' => 'nomArtiste',

@@ -9,7 +9,6 @@ use App\Repository\AlbumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\File;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -29,6 +28,8 @@ class AlbumController extends AbstractController
 
     /**
      * @Route("/nouveau", name="nouveau", methods={"GET"})
+     * @param AlbumRepository $albumRepository
+     * @return Response
      */
 
     public function nouveautes(AlbumRepository $albumRepository): Response
@@ -59,7 +60,20 @@ class AlbumController extends AbstractController
         $form->handleRequest($request);
 /** test for cynthia */
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $album->getImgAlbum();
+            $image = $form['imgAlbum']->getData();
+            $nomAlbum = $form['nomAlbum']->getData();
+
+            $image->move(
+                $this->getParameter('images_directory'),
+                $nomAlbum . '.' . $image->guessExtension()
+            );
+
+            // je peux te taper dessus?
+
+            $album->setImgAlbum("album");
+            $album->setCreationAlbum("05-02-2020");
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();
