@@ -25,26 +25,9 @@
                         <div class="card-body">
                             <img src="{{ asset( album.imgAlbum ) }}" class="card-img-top">
                             <h5 class="card-title">{{ album.nomAlbum }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{album.prixAlbum}}</h6>
-                        <a data-toggle="modal"
-                           data-target="#dataModal"
-                           href="#" class="card-link">Ajout Panier</a>
-                        <div id="dataModal" class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                                    </div>
-                                    <div class="modal-body" id="modal_detail">
-                                        <p>Votre article à bien été ajouté au panier.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <h6 class="card-subtitle mb-2 text-muted">{{album.prixAlbum}} €</h6>
+                        <a
+                           href="{{ path('panier_add', {'id':album.id}) }}" class="card-link">Ajout Panier</a>
                     </div>
                 </div>
             </div>
