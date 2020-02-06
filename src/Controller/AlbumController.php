@@ -9,6 +9,7 @@ use App\Repository\AlbumRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -58,6 +59,7 @@ class AlbumController extends AbstractController
         $form->handleRequest($request);
 /** test for cynthia */
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $album->getImgAlbum();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($album);
             $entityManager->flush();

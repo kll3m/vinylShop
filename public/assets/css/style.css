@@ -4,6 +4,17 @@ html {
 
 }
 
+.mr-sm-2 {
+    width:200px !important;
+}
+
+.searchbar {
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px; /* largeur obligatoire pour être centré */
+}
+
 body {
     font-family: 'Muli', sans-serif !important;
     min-height: 100vh !important;

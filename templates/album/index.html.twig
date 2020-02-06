@@ -18,16 +18,23 @@
         </thead>
         <tbody>
         <div class="container article">
+            <nav class="navbar searchbar">
+                <div class="row">
+                    <form class="form-inline" action="/album/recherche" method="get">
+                        <input style="width:300px;"class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </nav>
             <div class="row">
                 {% for album in albums %}
                 <div class="col-6 col-sm-4">
                     <div class="card" style="width: 14rem;">
                         <div class="card-body">
-                            <img src="{{ asset( album.imgAlbum ) }}" class="card-img-top">
-                            <h5 class="card-title">{{ album.nomAlbum }}</h5>
+                            <a href="{{ path('album_show', {'id':album.id}) }}"><img src="{{ asset( album.imgAlbum ) }}" class="card-img-top"> </a>
+                            <a href="{{ path('album_show', {'id':album.id}) }}"><h5 class="card-title">{{ album.nomAlbum }}</h5></a>
                             <h6 class="card-subtitle mb-2 text-muted">{{album.prixAlbum}} €</h6>
-                        <a
-                           href="{{ path('panier_add', {'id':album.id}) }}" class="card-link">Ajout Panier</a>
+                        <a href="{{ path('panier_add', {'id':album.id}) }}" class="card-link">Ajout Panier</a>
                     </div>
                 </div>
             </div>
