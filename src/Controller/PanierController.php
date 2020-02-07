@@ -39,4 +39,9 @@ class PanierController extends AbstractController
         $servicePanier->remove($id);
         return $this->redirectToRoute('panier');
     }
+
+    public function sizePanier(ServicePanier $servicePanier){
+        $res = $servicePanier->getPanierSize();
+        return $res;
+    }
 }

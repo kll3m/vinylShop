@@ -62,4 +62,10 @@ class ServicePanier{
         return $total;
     }
 
+    public function getPanierSize(){
+        $panier = $this->session->get('panier', []);
+        $res = sizeof($panier);
+        return  $res;
+    }
+
 }
