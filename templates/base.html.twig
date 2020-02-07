@@ -11,84 +11,152 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-            <nav class="navbar navbar-dark bg-dark">
-                <a class="navbar-brand" href="/">Vinyl Shop</a>
 
-                    <ul class="nav justify-content-end ">
+    <!--MENU GRAND ECRAN-->
+    <div class="navlaptop">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Vinyl Shop</a>
+
+            <ul class="nav justify-content-end ">
+                <li class="nav-item">
+                    <a class="nav-link" href="/style">Styles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/album/nouveau">Nouveautés</a>
+                </li>
+                <form class="form-inline" action="/album/recherche" method="get">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa fa-user"> </i></a>
+                </li>
+                {% if not app.user %}
+                    <div class="row">
                         <li class="nav-item">
-                            <a class="nav-link" href="/style">Styles</a>
+                            <a class="nopadding nav-link" href="/login">Se connecter</a>
                         </li>
+                        <div class="w-100" style="height:0px;"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="/album/nouveau">Nouveautés</a>
+                            <a class="nopadding nav-link" href="/register">S'inscrire</a>
                         </li>
-                        <form class="form-inline" action="/album/recherche" method="get">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
-                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                    </div>
+                {% endif %}
+                {% if app.user %}
+                    <div class="row">
                         <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-user"> </i></a>
+                            <a class="nopadding nav-link" href="/logout">Se déconnecter</a>
+                        </li>
+                    </div>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/panier"><i class="fa fa-shopping-bag"> </i><span class="badge badge-primary" style="margin-top:4px;"></span></a>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- MENU MOBILE-->
+        <div class="navmobile">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Vinyl Shop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Styles <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nouveautés</a>
                         </li>
                         {% if not app.user %}
-                        <div class="row">
-                            <li class="nav-item">
-                            <a class="nopadding nav-link" href="/login">Se connecter</a>
-                            </li>
-                            <div class="w-100" style="height:0px;"></div>
-                            <li class="nav-item">
-                                <a class="nopadding nav-link" href="/register">S'inscrire</a>
-                            </li>
-                        </div>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/login"><i class="fa fa-user"> </i> Se connecter / S'inscrire </a>
+                        </li>
                         {% endif %}
                         {% if app.user %}
-                        <div class="row">
-                            <li class="nav-item">
-                                <a class="nopadding nav-link" href="/logout">Se déconnecter</a>
-                            </li>
-                        </div>
+                        <li class="nav-item active">
+                            <a class="nopadding nav-link" href="/logout">Se déconnecter</a>
+                        </li>
                         {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/panier"><i class="fa fa-shopping-bag"> </i><span class="badge badge-primary" style="margin-top:4px;">X</span></a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/panier"><i class="fa fa-shopping-bag"> </i> Panier </a>
                         </li>
                     </ul>
-
+                    <form class="form-inline my-2 my-lg-0" action="/album/recherche" method="get">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
             </nav>
-
-
-
+        </div>
             {% block body %}{% endblock %}
 
 
 
-
-        <footer class="page-footer bg-dark">
+<!-- FOOTER -->
+    <footer id="footer" class="page-footer bg-dark footer-1">
+        <div class="main-footer widgets-dark typo-light">
             <div class="container">
-            <div class="row">
+                <div class="row">
 
-                <!-- Grid column -->
-                <div class="footicon col-md-12">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">Vinyl Shop<span></span></h5>
+                            <p>Passionés par les disques et la musique depuis plus de 50 ans</p>
+                        </div>
+                    </div>
 
-                        <!-- Facebook -->
-                        <a class="fb-ic">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Liens rapides<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="/album/nouveau">Nouveautés</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="/style">Styles</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contactez nous<span></span></h5>
                             <i class="fa fa-facebook-f white"> </i>
-                        </a>
-                        <!-- Twitter -->
-                        <a class="tw-ic">
                             <i class="fa fa-twitter"> </i>
-                        </a>
-                        <!--Instagram-->
-                        <a class="ins-ic">
                             <i class="fa fa-instagram"> </i>
-                        </a>
+                            <p><a href="mailto:info@vinylshop.com" title="glorythemes">info@vinylshop.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Notre situation<span></span></h5>
+                            <p>11, Rue de la Roquette </hr> Paris 11ème</p>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
-            </div>
-                <!-- Grid column -->
-                <div class="footer-copyright text-center py-3"> 2020 Copyright:
-                    <a href="https://mdbootstrap.com/education/bootstrap/"> VinylShop.com</a>
-                </div>
+        </div>
 
-        </footer>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright VinylShop © 2016. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     {% block javascripts %}{% endblock %}
