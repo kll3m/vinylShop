@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Style;
 use App\Form\StyleType;
 use App\Repository\StyleRepository;
+use App\Repository\ArtisteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -91,4 +92,5 @@ class StyleController extends AbstractController
 
         return $this->redirectToRoute('style_index');
     }
+
 }
