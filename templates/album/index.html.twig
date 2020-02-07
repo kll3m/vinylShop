@@ -7,17 +7,11 @@
        <hr />
 
         <div class="container article">
-            <nav class="navbar searchbar">
-                <div class="row">
-                    <form class="form-inline" action="/album/recherche" method="get">
-                        <input style="width:300px;"class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" name="search">
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </nav>
+
+            <div style="height:80px"></div>
             <div class="row">
                 {% for album in albums %}
-                <div class="col-6 col-sm-4">
+                <div class="col-6 col-sm-4" style="margin-top: 30px;">
                     <div class="card" style="width: 14rem;">
                         <div class="card-body">
                             <a href="{{ path('album_show', {'id':album.id}) }}"><img src="{{ asset( album.imgAlbum ) }}" class="card-img-top"> </a>
@@ -34,6 +28,69 @@
         {% endfor %}
             </div>
         </div>
-    <div style="height:200px"></div>
+    <div style="height:300px"></div>
+
+
+    <!-- FOOTER -->
+
+    <footer id="footer" class="page-footer bg-dark footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">Vinyl Shop<span></span></h5>
+                            <p>Passionés par les disques et la musique depuis plus de 50 ans</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Liens rapides<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="/album/nouveau">Nouveautés</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="/style">Styles</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contactez nous<span></span></h5>
+                            <i class="fa fa-facebook-f white"> </i>
+                            <i class="fa fa-twitter"> </i>
+                            <i class="fa fa-instagram"> </i>
+                            <p><a href="mailto:info@vinylshop.com" title="glorythemes">info@vinylshop.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Notre situation<span></span></h5>
+                            <p>11, Rue de la Roquette </hr> Paris 11ème</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright VinylShop © 2016. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 {% endblock %}

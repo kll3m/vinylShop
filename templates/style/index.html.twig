@@ -3,31 +3,98 @@
 {% block title %}Style index{% endblock %}
 
 {% block body %}
-    <h1>Tout les styles :</h1>
+<div class="container article">
+    <div style="height:80px"></div>
+         <div class="row">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for style in styles %}
-            <tr>
-                <td>{{ style.nomStyle }}</td>
-                <td>
-                    <a href="{{ path('style_show', {'id': style.id}) }}">Voir</a>
-                    <a href="{{ path('style_edit', {'id': style.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <h1>Styles de vinyls :</h1>
 
-    <a href="{{ path('style_new') }}">Create new</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for style in styles %}
+                    <tr>
+                        <td>{{ style.nomStyle }}</td>
+                        <td>
+                            <a href="{{ path('style_show', {'id': style.id}) }}">Voir</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+         </div>
+</div>
+    <div style="height:250px"></div>
+    <!-- FOOTER -->
+
+    <footer id="footer" class="page-footer bg-dark footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">Vinyl Shop<span></span></h5>
+                            <p>Passionés par les disques et la musique depuis plus de 50 ans</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Liens rapides<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="/album/nouveau">Nouveautés</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="/style">Styles</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contactez nous<span></span></h5>
+                            <i class="fa fa-facebook-f white"> </i>
+                            <i class="fa fa-twitter"> </i>
+                            <i class="fa fa-instagram"> </i>
+                            <p><a href="mailto:info@vinylshop.com" title="glorythemes">info@vinylshop.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Notre situation<span></span></h5>
+                            <p>11, Rue de la Roquette </hr> Paris 11ème</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright VinylShop © 2016. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}

@@ -6,7 +6,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" style="margin-top: 30px;">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href='../'>Accueil</a></li>
@@ -31,12 +31,11 @@
             <div class="col-4">
                 <div class="jumbotron jumbotron-fluid">
 
-                    <h1 class="display-4"></h1>
-                    <p class="lead">{{ album.prixAlbum }} €</p>
+                    <h3 class="display-6">{{ album.prixAlbum }} €</h3>
                     <form>
-                    <button type="submit" formaction="{{ path('panier_add', {'id':album.id}) }}" class="btn btn-outline-dark">Ajouter au panier</button>
+                    <button type="submit" formaction="{{ path('panier_add', {'id':album.id}) }}" class="btn btn-outline-info">Ajouter au panier</button>
                     </form>
-                    <p class="lead">Quantité</p>
+
 
                 </div>
             </div>
@@ -45,8 +44,69 @@
 
     <a href="{{ path('album_index') }}">Retour à la liste des albums</a>
 
-    <a href="{{ path('album_edit', {'id': album.id}) }}">Modifier l'album</a>
-
-    {{ include('album/_delete_form.html.twig') }}
     </div>
+    <div style="height:400px"></div>
+
+    <!-- FOOTER -->
+
+    <footer id="footer" class="page-footer bg-dark footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">Vinyl Shop<span></span></h5>
+                            <p>Passionés par les disques et la musique depuis plus de 50 ans</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Liens rapides<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <div class="thumb-content"><a href="/album/nouveau">Nouveautés</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="/style">Styles</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contactez nous<span></span></h5>
+                            <i class="fa fa-facebook-f white"> </i>
+                            <i class="fa fa-twitter"> </i>
+                            <i class="fa fa-instagram"> </i>
+                            <p><a href="mailto:info@vinylshop.com" title="glorythemes">info@vinylshop.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Notre situation<span></span></h5>
+                            <p>11, Rue de la Roquette </hr> Paris 11ème</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright VinylShop © 2016. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 {% endblock %}
