@@ -56,7 +56,7 @@
             <h4>Commandes</h4>
         </div>
         <div class="col-10">
-            <a class="btn btn-outline-secondary" href="#" role="button">Voir tout</a>
+            <a class="btn btn-outline-secondary" href="" role="button">Voir tout</a>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
             <p>Commandes passées</p>
         </div>
         <div class="col-2">
-            <p>Livraison en cours</p>
+            <p>Commandes en cours</p>
         </div>
         <div class="col-2">
             <p>Livrées</p>
@@ -80,16 +80,16 @@
     <div class="nombre row" style="background-color: #f3f3f3;padding-top: 30px;">
         <div class="col-3"></div>
         <div class="col-2">
-            <h3><span class="badge badge-light">35</span></h3>
+            <h3><span class="badge badge-light">{{ commandePassee }}</span></h3>
         </div>
         <div class="col-2">
-            <h3><span class="badge badge-light">35</span> </h3>
+            <h3><span class="badge badge-light">{{ commandeEnCours }}</span> </h3>
         </div>
         <div class="col-2">
-            <h3><span class="badge badge-light">35</span></h3>
+            <h3><span class="badge badge-light">{{ commandeLivree }}</span></h3>
         </div>
         <div class="col-2">
-           <h3> <span class="badge badge-primary">138</span></h3>
+           <h3> <span class="badge badge-primary">{{ total }}</span></h3>
         </div>
         <div class="col-1"></div>
     </div>
