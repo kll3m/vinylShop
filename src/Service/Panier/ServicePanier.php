@@ -63,9 +63,11 @@ class ServicePanier{
     }
 
     public function getPanierSize(){
-        $panier = $this->session->get('panier', []);
-        $res = sizeof($panier);
-        return  $res;
+        $qty = 0;
+        foreach ($this->getFullPanier() as $item){
+            $qty+=$item['quantity'];
+        }
+        return  $qty;
     }
 
 }
