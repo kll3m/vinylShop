@@ -35,7 +35,14 @@
                             </li>
                             <div class="w-100" style="height:0px;"></div>
                             <li class="nav-item">
-                                <a class="nopadding nav-link" href="/client/new">S'inscrire</a>
+                                <a class="nopadding nav-link" href="/register">S'inscrire</a>
+                            </li>
+                        </div>
+                        {% endif %}
+                        {% if app.user %}
+                        <div class="row">
+                            <li class="nav-item">
+                                <a class="nopadding nav-link" href="/logout">Se déconnecter</a>
                             </li>
                         </div>
                         {% endif %}
@@ -46,12 +53,7 @@
 
             </nav>
 
-            <div class="row" style="background-color:white;text-align: center;">
-                <div class="col-12">
-                    <p style="margin-top: 15px;font-weight:bold;font-size:14px;">Profitez de -10% de réduction sur votre première commande avec le code VYNIL10
-                    </p>
-                </div>
-            </div>
+
 
             {% block body %}{% endblock %}
 
