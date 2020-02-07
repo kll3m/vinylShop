@@ -21,6 +21,7 @@ body {
 @media (min-width:900px) {
     .navmobile {
         display: none;
+        visibility: hidden;
     }
     .navlaptop {
         display: block;
@@ -33,6 +34,7 @@ body {
     }
     .navlaptop {
         display: none;
+        visibility: hidden;
     }
 
     footer {
