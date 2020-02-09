@@ -25,25 +25,40 @@ body {
     }
     .navlaptop {
         display: block;
+
     }
 }
 
 @media  (max-width:900px) {
     .navmobile {
         display: block;
+
     }
     .navlaptop {
         display: none;
         visibility: hidden;
     }
 
-    footer {
+    #footer {
         display: none;
     }
 }
 /*.mr-sm-2 {
     width:200px !important;
 }*/
+
+.navbar {
+    width: -webkit-fill-available !important;
+    position: fixed !important;
+    z-index: 3;
+
+}
+
+.form-check {
+    z-index: -1 !important;
+
+
+}
 
 .nav-item a{
     color: #e0e0e0;
@@ -97,6 +112,11 @@ hr {
 /*====================
 	Produits
 ====================== */
+
+.card {
+
+}
+
 .card-body{
     padding: 0 !important;
 }
@@ -139,7 +159,7 @@ hr {
 }
 
 .formNew {
-    margin-top: 50px !important;
+    margin-top: 20% !important;
     margin-bottom: 200px;
 }
 
