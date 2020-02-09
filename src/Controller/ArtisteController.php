@@ -58,6 +58,7 @@ class ArtisteController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/{id}/edit", name="artiste_edit", methods={"GET","POST"})
      */

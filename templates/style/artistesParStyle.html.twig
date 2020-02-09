@@ -3,38 +3,36 @@
 {% block title %}Style index{% endblock %}
 
 {% block body %}
-<div class="container article">
-    <div style="height:80px"></div>
-         <div class="row">
+    <div class="container article">
+        <div style="height:80px"></div>
+        <div class="row">
 
-        <h1>Styles de vinyls :</h1>
+            <h1>Styles de vinyls :</h1>
 
             <table class="table">
                 <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>actions</th>
-                    </tr>
+                <tr>
+                    <th>Nom</th>
+                    <th>actions</th>
+                </tr>
                 </thead>
                 <tbody>
                 {% for style in styles %}
-                    <tr>
-                        <td>{{ style.nomStyle }}</td>
-                        <td>
-                            <a href="{{ path('artistes_style', {'id': style.id}) }}">Voir</a>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr>
-                        <td colspan="3">no records found</td>
-                    </tr>
+                    {% for artiste in style %}
+                        <tr>
+                            <td>{{ artiste.nom }}</td>
+                            <td>
+                                <a href="{{ path('artistes_style', {'id': style.id}) }}">Voir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
                 {% endfor %}
                 </tbody>
             </table>
 
 
-         </div>
-</div>
+        </div>
+    </div>
     <div style="height:250px"></div>
     <!-- FOOTER -->
 

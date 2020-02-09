@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Artiste;
 use App\Entity\Style;
 use App\Form\StyleType;
 use App\Repository\StyleRepository;
@@ -48,6 +49,8 @@ class StyleController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
 
     /**
      * @Route("/{id}", name="style_show", methods={"GET"})

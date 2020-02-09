@@ -3,7 +3,7 @@
 {% block title %}Page admin{% endblock %}
 
 {% block body %}
-
+{% if app.user %}
     <!--Partie Gérer-->
 
 <div class="container">
@@ -144,7 +144,7 @@
 
 
     </div>
-
-
-
+{% else %}
+    <p>Vous n'avez pas le droit d'accéder à cette page.</p>
+{% endif %}
 {% endblock %}
